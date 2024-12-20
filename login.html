@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat datang di OPTIMA!</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <?php if (!empty($error)): ?>
+        <div style="color: red;"><?php echo htmlspecialchars($error); ?></div>
+    <?php endif; ?>
+    
+    <div class="login-box">
+        <p>Masuk untuk akses</p>
+        <form method="POST" action="/api/login.php">
+          <div class="user-box">
+            <input required="" name="username" type="text">
+            <label>Nama pengguna</label>
+          </div>
+          <div class="user-box">
+            <input required="" name="password" type="password">
+            <label>Kata sandi</label>
+          </div>
+          <button type="submit" class="btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Masuk
+          </button>
+        </form>
+        <p>Lupa Nama pengguna atau Kata sandi? <a href="https://wa.me/6281288172775" class="a2">Hubungi admin!</a></p>
+      </div>
+      <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const username = document.querySelector('input[name="username"]').value.trim();
+            const password = document.querySelector('input[name="password"]').value.trim();
+            if (!username || !password) {
+                e.preventDefault();
+                alert('Nama pengguna dan kata sandi tidak boleh kosong.');
+            }
+        });
+    </script>
+    
+</body>
+</html>
