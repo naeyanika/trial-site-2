@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['logged_in'] = true;
                     
                     // Redirect ke root index.php
-                    header('Location: ../index.php');
+                    header('Location: ../index.html');
                     exit();
                 } else {
                     $error = "Password salah!";
